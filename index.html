@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BrewHouse Coffee — a fictional specialty coffee shop website demo.">
+  <title>BrewHouse Coffee | Crafted with Care</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="logo" href="#home">BrewHouse<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="nav-links" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#menu">Menu</a></li><li><a href="#location">Location</a></li><li><a class="nav-cta" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <p class="eyebrow">FRESHLY BREWED · EVERY DAY</p>
+        <h1>Your daily cup of <em>something special.</em></h1>
+        <p>Thoughtfully sourced beans, expertly brewed coffee, and a warm place to unwind.</p>
+        <a class="btn" href="#menu">Explore our menu <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+    <section class="section about" id="about">
+      <div class="container split">
+        <div class="about-photo" role="img" aria-label="Freshly poured coffee"></div>
+        <div><p class="eyebrow">OUR STORY</p><h2>Good coffee. <em>Great moments.</em></h2><p>At BrewHouse, we believe the best conversations begin with a great cup of coffee. From our carefully selected beans to every handmade drink, we make each visit feel like home.</p><p class="small-note">A fictional café created as a frontend portfolio demonstration.</p></div>
+      </div>
+    </section>
+    <section class="section menu-section" id="menu">
+      <div class="container"><p class="eyebrow center">MADE WITH LOVE</p><h2 class="center">Our favorites</h2><p class="section-intro center">Discover a few of our signature drinks.</p>
+        <div class="menu-grid">
+          <article class="menu-card"><div class="drink-photo espresso" role="img" aria-label="Espresso cup"></div><div class="menu-info"><h3>Classic Espresso</h3><p>Rich, bold and perfectly balanced.</p><strong>$3.50</strong></div></article>
+          <article class="menu-card"><div class="drink-photo latte" role="img" aria-label="Latte coffee"></div><div class="menu-info"><h3>Vanilla Latte</h3><p>Smooth espresso with creamy vanilla.</p><strong>$5.25</strong></div></article>
+          <article class="menu-card"><div class="drink-photo cold" role="img" aria-label="Iced coffee"></div><div class="menu-info"><h3>Iced Cold Brew</h3><p>Slow-steeped for a refreshing finish.</p><strong>$4.75</strong></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="section location-section" id="location"><div class="container split location-split"><div><p class="eyebrow">COME SAY HELLO</p><h2>Find your <em>coffee corner.</em></h2><p><strong>Location:</strong> Sample address, Portland, Oregon (fictional)</p><p><strong>Hours:</strong> Mon–Fri 7:00 AM–6:00 PM<br>Sat–Sun 8:00 AM–5:00 PM</p><p class="small-note">All business details are examples for this portfolio project.</p></div><div class="location-art" aria-hidden="true">☕</div></div></section>
+    <section class="section contact-section" id="contact"><div class="container contact-wrap"><p class="eyebrow center">GET IN TOUCH</p><h2 class="center">Let's talk coffee</h2><p class="section-intro center">Try the demo form below. It validates input but does not send messages.</p>
+      <form id="contact-form" novalidate><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Jane Doe"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="jane@example.com"><label for="message">Your message</label><textarea id="message" name="message" rows="5" required minlength="10" placeholder="Tell us what's on your mind..."></textarea><button class="btn" type="submit">Validate message →</button><p id="form-status" class="form-status" role="status" aria-live="polite"></p></form>
+    </div></section>
+  </main>
+  <footer><div class="container footer-inner"><a class="logo" href="#home">BrewHouse<span>.</span></a><p>© <span id="year"></span> BrewHouse Coffee · Fictional portfolio project</p></div></footer>
+</body>
+</html>
