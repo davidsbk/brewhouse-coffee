@@ -28,3 +28,60 @@ form.addEventListener('submit', event => {
   status.textContent = 'Demo validation successful! No message was sent.';
   status.classList.add('success');
 });
+
+
+// ==================================
+// BREWHOUSE - SCROLL EFFECTS
+// ==================================
+
+// Cambiar apariencia del encabezado
+const header = document.querySelector(".site-header");
+
+function updateHeader() {
+  header.classList.toggle(
+    "scrolled",
+    window.scrollY > 50
+  );
+}
+
+window.addEventListener("scroll", updateHeader, {
+  passive: true
+});
+
+updateHeader();
+
+// Animaciones al aparecer en pantalla
+const animatedElements = document.querySelectorAll(
+  ".about .split, .menu-card, .location-split, .contact-wrap"
+);
+
+const reducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if ("IntersectionObserver" in window && !reducedMotion) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  animatedElements.forEach((element) => {
+    element.classList.add("reveal");
+    observer.observe(element);
+
+    // Activar transición después de registrar el elemento
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (!element.classList.contains("visible")) {
+          element.classList.add("reveal-ready");
+        }
+      });
+    });
+  });
+}
